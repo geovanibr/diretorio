@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+<meta charset="utf-8">
+	<title>Sistema de vendas</title>
+	<script type="text/javascript">
+		var lista = new Array();
+
+		function menu(){
+				
+				contador= 0;
+				valor=1;
+			while(valor!=0){
+				valor = prompt("Menu Principal  \n 1 - Produtos \n 2 - Compra \n 3 - Venda \n 4 - Relatórios \n 0 - Sair");
+				
+				if(valor ==0){
+					confirm("Deseja realmente sair?");
+				}
+				if(valor == 1){
+
+					var produtoAtual = cadastroProduto();
+					lista.push(produtoAtual);
+				}
+				if(valor == 4){
+					relatorioDeProdutos();
+				}
+
+			}
+		}
+
+		function cadastroProduto(){
+			confirmacao = confirm("Cadastro de produto \n Vamos cadastrar um novo produto, você precisa informar: Código, Nome, Preço e Estoque!");
+				if( confirmacao == true){
+					var novoProduto = {};
+					codigo = prompt("Digite o código do produto: ");
+					nome = prompt("Digite o nome do produto: ");
+					preco = prompt("Digite o preço do produto: ");
+					estoque = prompt("Digite a quantidade em estoque do produto: ");
+
+					novoProduto.codigo = codigo;
+					novoProduto.nome = nome;
+					novoProduto.preco = preco;
+					novoProduto.quantidade = estoque;
+					}
+					return novoProduto;
+
+					
+
+				}
+
+			function excluirProduto(){
+				codigoDoProduto = prompt("Digite o código do produto que deseja excluir: ");
+
+			}
+	
+
+		function relatorioDeProdutos(){
+
+			for(var i=0; i<lista.length;i++){
+				alert("\n Codigo do produto:  " + lista[i].codigo + " Nome produto: " + lista[i].nome + " Preco do produto: " + lista[i].preco + "Estoque do produto: " + lista[i].quantidade);
+
+			}
+		
+		}
+		menu();
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
